@@ -8,13 +8,168 @@
 	<!-- SCRIPTS -->
 	<script type="text/javascript" src="scripts/jquery.js"></script>
 	<script type="text/javascript" src="scripts/script.js"></script>
+	<script type="text/javascript" src="scripts/endereco.js"></script>
 	<!-- BOOTSTRAP -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
 	<title>Projeto 2</title>
 </head>
 
-<body>
-	
+<body>	                 
+        <div class="row container-fluid">
+        	
+        	<div class="col-sm-12 col-lg-6"> 
+	        	<div id="bloco1">
+	        		<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Cadastro de Candidato</h2><hr>
+        			
+        			<form class="form-horizontal">
+        				
+        				<div class="form-group">
+        					<div class="row">
+        						<label class="col-sm-1" for="nome">Nome</label>
+        						<div class="col-sm-11">
+        							<input class="form-control" type="text" name="nome" id="nome">
+        						</div>
+        					</div>
+        				</div>
+        				
+        				<div class="form-group">
+        					<div class="row">
+        						
+        						<div class="col-sm-4">
+        							<div class="form-group">
+	        							<div class="row">
+		        							<label class="col-sm-1">Sexo</label>
+			        						<div class="col-sm-9">
+				        						<select class="custom-select">
+				        							<option selected disabled="disabled" id="sexo" name="sexo">SEXO</option>
+				        							<option value="feminino">Feminino</option>
+				        							<option value="masculino">Masculino</option>
+				        							<option value="naodeclarado">Não Declarar</option>
+				        						</select>
+				        					</div>
+			        					</div>
+			        				</div>
+		        				</div>
+	        					
+	        					<div class="col-sm-8">
+	        						<div class="form-group">
+	        							<div class="row">
+        									<label class="col-sm-1 control-label" for="cpf">CPF</label>
+        									<div class="col-sm-11">
+        										<input class="form-control" type="text" name="cpf" id="cpf">
+        									</div>
+        								</div>
+        							</div>
+        						</div>
+	        				</div>
+        				</div>
+
+        				<div class="form-group">
+        					<div class="row">
+        						<div class="col-sm-1">
+        							<label class="control-label" for="rua">Rua</label>
+        						</div>
+        						<div class="col-sm-11">
+        							<input class="form-control" type="text" name="rua" id="rua">
+        						</div>
+        					</div>
+        				</div>
+
+        				<div class="form-group">
+        					<div class="row">
+        						<label class="col-sm-1 control-label" for="bairro">Bairro</label>
+        						<div class="col-sm-11">
+        							<input class="form-control" type="text" name="bairro" id="bairro">
+        						</div>
+        					</div>
+        				</div>
+
+        				<div class="row">
+        					<div class="form-group col-sm-6"> 
+	        					<select class="custom-select" id="estados" name="estados">
+	        						<option selected disabled="disabled">ESTADO</option>
+	        					</select>
+	        				</div>
+	        				<div class="form-group col-sm-6">
+	        					<select class="custom-select" id="cidades" name="cidades">
+	        						<option selected disabled="disabled">Cidade</option>
+	        					</select>
+        					</div>
+        				</div>
+        				
+        				
+        				<div class="form-group">
+        					<label class="col-sm-2 control-label" for="email">Email</label>
+        					<div class="col-sm-10">
+        						<input class="form-control" type="email" name="email" id="email">
+        					</div>
+        				</div>
+        				<div class="form-group">
+        					<label class="col-sm-2 control-label" for="cadjus">Registro</label>
+        					<div class="col-sm-10">
+        						<input class="form-control" type="text" name="cadjus" id="cadjus">
+        					</div>
+        				</div>
+        				<div class="form-group">
+        					<label class="col-sm-2 control-label" for="senha">Senha</label>
+        					<div class="col-sm-10">
+        						<input class="form-control" type="password" name="senha" id="senha">
+        					</div>
+        				</div>
+        				<hr>
+        				<div class="row">
+        					<div class="col-sm-6">
+        						<button type="reset" class="btn-lg btn-warning">LIMPAR</button>
+        					</div>
+        					<div class="col-sm-6">
+        						<button class="btn-lg btn-success">CADASTRAR</button>
+        					</div>
+        				</div>	
+
+        			</form>
+	        	</div>    
+	        </div>
+
+	        <div class="col-sm-12 col-lg-6"> 
+	        	<div class="row">
+	        		<div class="col-sm-12" id="bloco2">
+	        			<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Buscar Candidato</h2><hr>
+	        			
+	        			<div class="row container">
+	        				<div class="col-sm-1">
+	        					<label class="control-label" for="id">ID</label>
+	        				</div>
+	        				<div class="col-sm-1">
+	        					<input class="form-control" type="text" name="id" id="id">
+	        				</div>
+	        				<div class="col-sm-10 pull-right">
+	        					<button class="btn-primary btn-lg">BUSCAR</button>
+	        				</div>
+	        			</div>
+	        			<div class="row container">
+	        				<button class="btn-success btn-lg">LISTAR</button>
+	        			</div>
+	        		</div>
+	        		<div class="col-sm-12" id="bloco3">
+	        			<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Candidatos</h2><hr>
+	        			<table class="table">
+	        				<thead class="">
+	        					<tr>
+	        						<td>NOME</td>
+	        						<td>IDADE</td>
+	        					</tr>
+	        				</thead>
+	        				<tbody class="">
+	        					<tr>
+	        						<th></th>
+	        						<th></th>
+	        					</tr>	        					
+	        				</tbody>
+	        			</table>
+	        		</div>
+	        	</div>    
+	        </div>
+   		</div>      
 </body>
 </html>
