@@ -68,7 +68,7 @@
 
 
     	<!-- Modal -->
-		<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
 			<div class="modal-dialog" role="document">
 		    	<div class="modal-content">
 		      		<div class="modal-header">
@@ -78,20 +78,164 @@
 		        		</button>
 		      		</div>
 		      		<div class="modal-body">
-		        		...
+		        		<form class="form-horizontal">
+  	  					
+  	  					<div class="row">
+	  	  					<div class="col-sm-4">
+		  	  					<div class="form-group">
+		  	  						<label class="control-label col-sm-6" for="idcandidato">Código</label>
+		  	  						<div class="col-sm-6">
+		  	  							<input type="text" name="idcandidato" id="idcandidato" class="form-control">
+		  	  						</div>
+		  	  					</div>
+	  	  					</div>	
+						</div>
+        				<div class="form-group">
+    						<label class="control-label col-sm-2" for="nomeCandidato">Nome</label>
+    						<div class="col-sm-10">
+    							<input class="form-control" type="text" name="nomeCandidato" id="nomeCandidato">
+    						</div>
+    						<div class="col-sm-12">
+    							<div class="right">
+    								<label id="lblNome" class=""></label>
+    							</div>
+    						</div>	
+        				</div>
+        				
+        				<div class="form-group">
+        					<label class="col-sm-2 control-label" for="dtNascimento">Nascimento</label>
+        					<div class="col-sm-10">
+        						<input class="round-form" type="date" name="dtNascimento" id="dtNascimento">
+        					</div>
+        					<div class="row">
+        						<div class="col-sm-12">
+        							<div class="right">
+        								<label id="lblDtNasc" class=""></label>
+        							</div>
+        						</div>
+        					</div>	        					
+        				</div>
+	        					
+	        				<div class="form-group">		  
+		        				<label class="col-sm-2 control-label">Sexo</label>
+		        				<div class="col-sm-10">
+			     					<select class="form-control" id="sexoCandidato">
+			     						<option selected disabled="disabled">SEXO</option>
+			   							<option value="feminino">Feminino</option>
+			   							<option value="masculino">Masculino</option>
+			   							<option value="naodeclarado">Não Declarar</option>
+			  						</select>
+	        					</div>
+		        			</div>
+		        		        					
+							<div class="form-group">
+								<label class="col-sm-2 control-label" for="cpfCandidato">CPF</label>
+								<div class="col-sm-10">
+									<input class="form-control campoNumero" type="text" name="cpfCandidato" id="cpfCandidato">
+								</div>
+								<div class="row">
+        							<div class="col-sm-12">
+        								<div class="right">
+        									<label id="lblCpf" class=""></label>
+        								</div>
+        							</div>
+								</div>
+							</div>
+						
+	        				<div class="form-group">
+	    						<label class="control-label col-sm-2" for="ruaCandidato">Rua</label>     				
+	    						<div class="col-sm-10">
+	    							<input class="form-control" type="text" name="ruaCandidato" id="ruaCandidato">
+	    						</div>
+	        				</div>
+	        				<div class="form-group">
+	    						<label class="control-label col-sm-4" for="numeroCandidato">Numero</label>  				
+	    						<div class="col-sm-8">
+	    							<input class="form-control" type="text" name="numeroCandidato" id="numeroCandidato">
+	    						</div>
+	        				</div>
+	        			
+        				
+        					<div class="form-group">
+        						<label class="control-label col-sm-2" for="estado">Estado</label>
+        						<div class="col-sm-10"> 
+		        					<input type="text" id="estado" class="form-control">
+		        				</div>
+	        				</div>
+	        				<div class="form-group">
+	        					<label class="control-label col-sm-2" for="cidade">Cidade</label> 
+	        					<div class="col-sm-10"> 
+		        					<input type="text" id="cidade" class="form-control">
+	        				    </div>
+        					</div>
+        				
+        				
+	        				<div class="form-group">
+	        					<label class="col-sm-2 control-label" for="email">Email</label>
+	        					<div class="col-sm-10">
+	        						<input class="form-control" type="email" name="email" id="email">
+	        					</div>
+	        				</div>
+	        				<div class="form-group">
+	        					<label class="col-sm-2 control-label" for="cadjus">Registro</label>
+	        					<div class="col-sm-10">
+	        						<input class="form-control campoNumero" type="text" id="cadjus">
+	        					</div>
+	        					<div class="row">
+	    							<div class="col-sm-12">
+	    								<div class="right">
+	    									<label id="lblRegistro" class=""></label>
+	    								</div>
+	    							</div>
+								</div>
+	        				</div>
+					
+        				
+        				<div class="form-group">
+        					<label class="col-sm-4 control-label" for="senha">Senha</label>
+        					<div class="col-sm-8">
+        						<input class="form-control" type="password" name="senha" id="senha">
+        					</div>
+        				</div>
+        					
+        			</form>
 		      		</div>
 		    	  	<div class="modal-footer">
-		        		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		        		<button type="button" class="btn btn-primary">Save changes</button>
+		    	  		<button type="button" class="btn btn-danger" id="btnApagar">Apagar</button>
+		        		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+		        		<button type="button" class="btn btn-primary" id="btnAlterar">Salvar Alterações</button>
 		      		</div>
 		    	</div>
 		  	</div>
+		</div>
+
+
+		<div class="modal fade" id="confirmaDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+			<div class="modal-dialog" role="document">
+		    	<div class="modal-content">
+		      		<div class="modal-header text-center">
+		        		<h3 class="modal-title text-warning" id="lblCandidato"></h3>
+		          		<p class="text-danger">Tem certeza que deseja apagar a conta?</p>
+		          		<p class="text-danger">Essa operação é irreversível!!!</p>
+		
+		      		</div>
+		      		<div class="row">
+		      			<div class="col-sm-12 col-lg-6 text-center">
+		      				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+		      		    </div>
+		      			<div class="col-sm-12 col-lg-6 text-center">
+		      				<button type="button" class="btn btn-danger" id="btnApagarConta">Apagar Conta</button>
+		      			</div>
+		      		</div>
+		      	</div>
+		    </div>
 		</div>
 
     <!-- SCRIPTS -->
 	<script type="text/javascript" src="scripts/jquery.js"></script>
 	<script type="text/javascript" src="scripts/buscar.js"></script>
 	<script type="text/javascript" src="scripts/alterar.js"></script>
+	<script type="text/javascript" src="scripts/endereco.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</body>
 </html>	

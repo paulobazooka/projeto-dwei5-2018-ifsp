@@ -1,47 +1,40 @@
 $(document).ready(function () {
 
     consultarBaseDados();
-
 });
+
 
 
 // Função para buscar na base de dados todos os candidatos cadastrados
 function consultarBaseDados(){
 
-    var xmlRequest = new XMLHttpRequest();
-    xmlRequest.open("GET", 'http://andrebordignon.esy.es/php/consultacandidatos.php', true);
-    xmlRequest.send();
+    $.get("http://andrebordignon.esy.es/php/consultacandidatos.php", function(respostaSolicitação){
+        
+        var obj = JSON.parse(respostaSolicitação); 
+        
+        // função para ordenar os objetos por ordem alfabética
+        obj.sort(function(a,b) {
+            if(a.nome < b.nome) return -1;
+            if(a.nome > b.nome) return 1;
+            return 0;
+        });
 
-    xmlRequest.onreadystatechange = function () {        
-        if(xmlRequest.readyState == XMLHttpRequest.DONE && xmlRequest.status == 200) {              
-            var obj = JSON.parse(xmlRequest.responseText); 
-            
-            // função para ordenar os objetos por ordem alfabética
-            obj.sort(function(a,b) {
-                if(a.nome < b.nome) return -1;
-                if(a.nome > b.nome) return 1;
-                return 0;
-            });
-
-            console.log(obj);
-            var corpo = "";
-            // laço para incrementar
-            for(var i=0; i < obj.length; i++){              
-                if(obj[i].nome != ''){
-                    var age = idade(new Date(obj[i].datanasc), new Date());
-                    if(age > 0){        
-                        corpo += '<tr><td>' + obj[i].idcandidato + "</td><td>" + obj[i].nome + "</td><td>" + age + '</td><td><button id=' + obj[i].idcandidato + ' class="btn btn-info editar" onclick="clicou(' + obj[i].idcandidato + ');">editar</button></td><tr>';
-                    }
+        var corpo = "";
+        
+        // laço para incrementar
+        for(var i=0; i < obj.length; i++){              
+            if(obj[i].nome != ''){
+                var age = idade(new Date(obj[i].datanasc), new Date());
+                if(age > 0){        
+                    corpo += '<tr><td>' + obj[i].idcandidato + "</td><td>" + obj[i].nome + "</td><td>" + age + '</td><td><button id=' + obj[i].idcandidato + ' class="btn btn-info editar" onclick="clicou(' + obj[i].idcandidato + ');">editar</button></td><tr>';
                 }
             }
-
-            $('#candidatos').html(corpo);
-
-        } else {
-            // console.log('erro')
         }
-    };
+
+        $('#candidatos').html(corpo);
+    });   
 }
+
 
 
 function idade(dataNascimento) {
@@ -66,6 +59,3 @@ function idade(dataNascimento) {
 
     return quantos_anos < 0 ? 0 : quantos_anos;
 }
-
-
-

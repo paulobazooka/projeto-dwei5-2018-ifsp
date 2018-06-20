@@ -144,7 +144,6 @@ function cadastrarCandidato(){
     var _cpf = $('#cpf').val();
     var _rua = $('#rua').val();
     var _numero = $('#numero').val();
-    var _bairro = $('#bairro').val();
     var _cidade = $('#cidades option:selected').val();
     var _estado = $('#estados option:selected').val();
     var _email = $('#email').val();
@@ -162,7 +161,6 @@ function cadastrarCandidato(){
             cadjus : _registro,
             rua    : _rua,
             numero : _numero,
-            bairro : _bairro,
             cidade : _cidade,
             estado : _estado,
             cpf    : _cpf,
@@ -174,6 +172,18 @@ function cadastrarCandidato(){
         })
         .done(function(msg){
           console.log("DONE: " + msg);
+          $('#nome').val('');
+          $('#dtNasc').val('');
+          $('#sexo').val('');
+          $('#cpf').val('');
+          $('#rua').val('');
+          $('#numero').val('');
+          $('#cidades option:selected').val('');
+          $('#estados option:selected').val('');
+          $('#email').val('');
+          $('#cadjus').val('');
+          $('#senha').val('');
+          alert("Candidato cadastrado com sucesso!");
         })
         .fail(function(jqXHR, textStatus, msg){
             alert("FAIL" + msg);
