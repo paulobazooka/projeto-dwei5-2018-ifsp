@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">	
+		<meta name="autor" content="Paulo Sérgio do Nascimento 160013-3">
+		<meta name="disciplina" content="Desenvolvimento Web">
+		<meta name="projeto" content="Projeto 2">
+		
+		<!-- STYLES -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	    <link rel="stylesheet" href="styles/style.css">
+	    
+		<title>Projeto 2</title>
+	</head>
+
+	<body>	  
+		
+		<header>	
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="#"></a>
+			    </div>
+			    <ul class="nav navbar-nav">
+			      <li class=""><a href="index.html">Home</a></li>
+			      <li class=""><a href="cadastro.html">Cadastrar</a></li>
+			      <li><a href="#">Legislativo</a></li>
+			      <li><a href="#">IFSP</a></li>
+			    </ul>
+			  </div>
+			</nav>
+		</header>               
+
+		<section>
+			<div class="panel">
+				<div class="panel-heading">
+        			<div class="text-center">
+        				<h2 class="text-info">Lista de Candidatos</h2>
+        			</div>
+    			</div>
+    		</div>
+	    	<table class="table">
+		  		<thead>
+		      		<tr>
+		        		<th>Código</th>
+		        		<th>Nome</th>
+		        		<th>Idade</th>
+		        		<th>Editar</th>
+		      		</tr>
+		    	</thead>
+		    	<tbody id="candidatos">
+		        </tbody>
+		    </table>
+        </section>
+
+   		<footer class="footer">
+	        <div class="container">
+	            <div class="row">	     
+	                <div class="col-sm-6 info">	                    
+	                    <p> Desenvolvido por Paulo Sérgio do Nascimento </p>	                    
+	                </div>
+	                <div class="col-sm-6 info">
+	                	<a class="glyphicon-link github" href="https://github.com/paulobazooka/projeto-dwei5-2018-ifsp" target="blank">codigo fonte</a>
+	                </div>
+	            </div>
+	        </div>
+    	</footer>
+
+
+    	<!-- Modal -->
+		<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+		    	<div class="modal-content">
+		      		<div class="modal-header">
+		        		<h5 class="modal-title" id="exampleModalLabel">Candidato</h5>
+		        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          		<span aria-hidden="true">&times;</span>
+		        		</button>
+		      		</div>
+		      		<div class="modal-body">
+		        		...
+		      		</div>
+		    	  	<div class="modal-footer">
+		        		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        		<button type="button" class="btn btn-primary">Save changes</button>
+		      		</div>
+		    	</div>
+		  	</div>
+		</div>
+
+    <!-- SCRIPTS -->
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script type="text/javascript" src="scripts/buscar.js"></script>
+	<script type="text/javascript" src="scripts/alterar.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</body>
+</html>	

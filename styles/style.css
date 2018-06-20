@@ -1,14 +1,6 @@
-#bloco1{
-	background-color: ;
-	min-height: 900px;
-}
-
-#bloco2{
-	background-color: ;
-	min-height: 200px;
-}
-
-#bloco3{
-	background-color: ;
-	min-height: 700px;
+footer{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	background-color: lightgray;	
 }
