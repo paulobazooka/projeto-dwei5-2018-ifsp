@@ -6,47 +6,69 @@ $(document).ready(function () {
     var cpfValido      = false;
     var registroValido = false;
     var senhaValida    = false;
+    var emailValido    = false;
 
   //  $('#btnCadastrar').attr('disabled', 'disabled');
     $('#id').attr('disabled', 'disabled');
 
     // validar o campo nome
-    $('#nome').blur(function(){
+    $('#nome').change(function(){
         var nome = $(this).val();
         if(nome.length > 255){
             $('#lblNome').text("O nome do candidato deve ter no máximo 255 caracteres!");
             nomeValido = false;
         }else{
+            $('#lblNome').text("");
             nomeValido = true;
-            validarCampos();
         }
     }); 
 
     // validar a idade do candidato
-    $('#dtNasc').blur(function() {
+    $('#dtNasc').change(function() {
         var dataAtual = new Date();
         var dataNasc  = new Date($(this).val());
 
-        var anoAtual = dataAtual.getFullYear();
-        var mesAtual = dataAtual.getMonth() + 1;
-        var diaAtual = dataAtual.getDate();
-
-        if(anoAtual > dataNasc.getFullYear()){
-            if((dataAtual.getFullYear() - dataNasc.getFullYear()) < 18){
-                $('#lblDtNasc').attr('class','label-danger');
+        if(dataNasc.getFullYear() > dataAtual.getFullYear()){
+            $('#lblDtNasc').attr('style', 'color: red');
+            $('#lblDtNasc').text("Data Incorreta!");
+            idadeValida = false; 
+        }else{
+            if(idade(dataNasc.getFullYear(), dataNasc.getMonth(), dataNasc.getDay()) < 18){
+                $('#lblDtNasc').attr('style', 'color: red');
                 $('#lblDtNasc').text("Candidato menor de idade!");
-                idadeValida = false;
-            }
-        }else {
-            $('#lblDtNasc').text("");
-            idadeValida = true;
-            validarCampos();
-        }
+                idadeValida = false; 
+            }else{
+                $('#lblDtNasc').text("");
+                $('#lblDtNasc').removeAttr('style');
+                idadeValida = true; 
+            }     
+        }  
     });
 
 
+    // validar e-mail
+    $('#email').change(function(){
+        var email = $(this).val();
+
+        if(email.indexOf("@") != -1){
+            if(email.length > 10){
+                emailValido = true;
+                $('#lblEmail').text(''); 
+            }else {
+                emailValido = false;
+                $('#lblEmail').attr('style', 'color:red');;
+                $('#lblEmail').text('E-mail inválido!');
+            }
+        }else {
+            emailValido = false;
+            $('#lblEmail').attr('style', 'color:red');;
+            $('#lblEmail').text('E-mail inválido!');
+        }
+
+    });
+
     // validar cpf
-    $('#cpf').blur(function(){
+    $('#cpf').change(function(){
         var cpf = $('#cpf').val().replace(/[^0-9]/g, '').toString();
 
         if( cpf.length == 11 ){
@@ -68,16 +90,19 @@ $(document).ready(function () {
 
             //Retorna Verdadeiro se os dígitos de verificação são os esperados.
             if ( (v[0] != cpf[9]) || (v[1] != cpf[10]) ){
+                $('#lblCpf').attr('style', 'color: red');
                 $('#lblCpf').text("CPF inválido!");
                 $('#cpf').val('');
                 $('#cpf').focus();
                 cpfValido = false;
             }else{
+                $('#lblCpf').removeAttr('style');
+                $('#lblCpf').text("");
                 cpfValido = true;
-                validarCampos();
             }
         }
         else{
+            $('#lblCpf').attr('style', 'color: red');
             $('#lblCpf').text("CPF inválido!");
             $('#cpf').val('');
             $('#cpf').focus();
@@ -87,12 +112,11 @@ $(document).ready(function () {
 
 
     // validar campo de registro
-    $('#cadjus').blur(function(){
+    $('#cadjus').change(function(){
         var registro = $(this).val();
-        if(registro > 0 && registro <= 500){
+        if(registro > 0 && registro <= 5000){
             $('#lblRegistro').text("");
             registroValido = true;
-            validarCampos();
         }else{
             $('#lblRegistro').text("Registro Inválido!");
             registroValido = false;
@@ -109,32 +133,57 @@ $(document).ready(function () {
 
 
     // validar a senha
-    $('#confirmaSenha').blur(function(event) {
+    $('#confirmaSenha').change(function(event) {
         var senha1 = $('#senha').val();
         var senha2 = $(this).val();
 
         if(senha1 == senha2){
             $('#lblSenha').text("");
             senhaValida = true;
-            validarCampos();
         }else {
-            $('#lblSenha').text("Senha Inválida!");
+            $('#lblSenha').text("As senhas não coincidem!!");
             senhaValida = false;
         }
     });
 
     $('#btnCadastrar').click(function(event) {
-        cadastrarCandidato();
+        if(validarCampos())
+            cadastrarCandidato();
+        else{
+            alert("Verificar um ou mais campos!");
+        }
     });
 
     function validarCampos(){    
-        if(nomeValido && idadeValida && cpfValido && registroValido && senhaValida){
-            $('#btnCadastrar').removeAttr('disabled');  
-    }
-}
+        if(nomeValido && idadeValida && cpfValido && registroValido && senhaValida && emailValido){
+            return true;      
+        }else{
+            return false;
+        }
+    }   
 
 });
 
+
+
+function idade(ano_aniversario, mes_aniversario, dia_aniversario) {
+        var d = new Date,
+        ano_atual = d.getFullYear(),
+        mes_atual = d.getMonth() + 1,
+        dia_atual = d.getDate(),
+
+        ano_aniversario = +ano_aniversario,
+        mes_aniversario = +mes_aniversario,
+        dia_aniversario = +dia_aniversario,
+
+        quantos_anos = ano_atual - ano_aniversario;
+
+    if (mes_atual < mes_aniversario || mes_atual == mes_aniversario && dia_atual < dia_aniversario) {
+        quantos_anos--;
+    }
+
+    return quantos_anos < 0 ? 0 : quantos_anos;
+}
 
 
 function cadastrarCandidato(){

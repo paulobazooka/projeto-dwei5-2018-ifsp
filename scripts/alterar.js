@@ -27,8 +27,6 @@ function clicou(id){
         // laço para incrementar
         for(var i=0; i < obj.length; i++){              
             if(obj[i].idcandidato == id){
-
-            	console.log(obj[i].sexo.indexOf("asc"));
             	
  				$('#idcandidato').val(obj[i].idcandidato); 
  				$('#idcandidato').attr('disabled', 'disabled');
@@ -101,16 +99,16 @@ function alterarCadastro(){
 
 function limparCampos(){
 	$('#nomeCandidato').val('');
-  	$('#dtNascimento').val('');
-  	$('#sexoCandidato').val('');
-  	$('#cpfCandidato').val('');
-  	$('#rua').val('');
-  	$('#numero').val('');
-  	$('#cidade').val('');
-  	$('#estado').val('');
-  	$('#email').val('');
-  	$('#cadjus').val('');
-  	$('#senha').val('');
+  $('#dtNascimento').val('');
+  $('#sexoCandidato').val('');
+  $('#cpfCandidato').val('');
+  $('#rua').val('');
+  $('#numero').val('');
+  $('#cidade').val('');
+  $('#estado').val('');
+  $('#email').val('');
+  $('#cadjus').val('');
+  $('#senha').val('');
 }
 
 
@@ -118,18 +116,17 @@ function limparCampos(){
 function apagarCandidato(){
 	
 	var string = 'http://andrebordignon.esy.es/php/deletacandidato.php?idcandidato=' + $('#idcandidato').val();
-	console.log(string);
+	
 	$.ajax({
 		url: string,
 	})
 	.done(function() {
-		console.log("success");
+		alert("Usuário APAGADO com sucesso!")
 	})
 	.fail(function() {
 		console.log("error");
 	})
 	.always(function() {
-		console.log("complete");
 		$('#confirmaDelete').modal('hide');
    		$('#modal').modal('hide');	
    		limparCampos();

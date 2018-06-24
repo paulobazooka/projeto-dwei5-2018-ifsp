@@ -26,7 +26,7 @@ function consultarBaseDados(){
             if(obj[i].nome != ''){
                 var age = idade(new Date(obj[i].datanasc), new Date());
                 if(age > 0){        
-                    corpo += '<tr><td>' + obj[i].idcandidato + "</td><td>" + obj[i].nome + "</td><td>" + age + '</td><td><button id=' + obj[i].idcandidato + ' class="btn btn-info editar" onclick="clicou(' + obj[i].idcandidato + ');">editar</button></td><tr>';
+                    corpo += '<tr><td>' + obj[i].idcandidato + "</td><td>" + obj[i].nome + "</td><td>" + age + '</td><td><button id=' + obj[i].idcandidato + ' class="btn btn-sm btn-warning editar" onclick="clicou(' + obj[i].idcandidato + ');"><span class="glyphicon glyphicon-pencil"></span></button></td><tr>';
                 }
             }
         }

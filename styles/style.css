@@ -1,6 +1,35 @@
 footer{
-	position: absolute;
+	background-color: lightgray;
+	height: 10%;
+	color: gray;
+}
+
+#bloco1{
+	margin-top: 50px;
+	margin-bottom: 80px;
+}
+
+#git{
+	text-decoration: none; 
+	color: gray;
+}
+
+#git:hover{
+	color: white;
+}
+
+ul li:hover{
+	background-color: white;
+}
+
+table{
+	margin-right: 10px;
+	margin-left: 10px;
+	padding: 5px;
+}
+
+.table-responsive{
 	width: 100%;
-	bottom: 0;
-	background-color: lightgray;	
+    height: 400px;
+    overflow: scroll;
 }

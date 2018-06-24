@@ -5,6 +5,8 @@
 		<meta name="autor" content="Paulo Sérgio do Nascimento 160013-3">
 		<meta name="disciplina" content="Desenvolvimento Web">
 		<meta name="projeto" content="Projeto 2">
+		<!-- STYLES -->
+		<link rel="stylesheet" type="text/css" href="styles/style.css">>
 		<!-- SCRIPTS -->
 		<script type="text/javascript" src="scripts/jquery.js"></script>
 		<script type="text/javascript" src="scripts/endereco.js"></script>
@@ -13,21 +15,22 @@
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-	    <link rel="stylesheet" type="text/css" href="styles/style.css">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 		<title>Legislativo</title>
 	</head>
 
 	<body>	  
 		
 		<header>	
-			<nav class="navbar navbar-default">
+			<nav class="navbar navbar-default navbar-fixed-top">
 			  <div class="container-fluid">
 			    <div class="navbar-header">
 			      <a class="navbar-brand" href="#"></a>
 			    </div>
 			    <ul class="nav navbar-nav">
-			      <li class="active"><a href="index.html">Home</a></li>
-			      <li class=""><a href="buscar.html">Buscar</a></li>
+			      <li><a href="index.html">Home</a></li>
+			      <li><a href="buscar.html">Buscar</a></li>
 			      <li><a href="#">Legislativo</a></li>
 			      <li><a href="#">IFSP</a></li>
 			    </ul>
@@ -35,12 +38,12 @@
 			</nav>
 		</header>               
 
-		<div class="container">        	
+		<div class="container">       	
         	
         	<div class="panel panel-default" id="bloco1">
         		<div class="panel-heading">
         			<div class="text-center">
-        				<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Cadastro de Candidato</h2><hr>
+        				<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Cadastro de Candidato</h2><hr>
         			</div>
     			</div>
 
@@ -75,10 +78,8 @@
 	        						<input class="round-form" type="date" name="dtNasc" id="dtNasc">
 	        					</div>
 	        					<div class="row">
-	        						<div class="col-sm-12">
-	        							<div class="right">
-	        								<label id="lblDtNasc" class=""></label>
-	        							</div>
+	        						<div class="col-sm-12 text-left">
+	        							<label id="lblDtNasc"></label>
 	        						</div>
 	        					</div>	        					
 	        				</div>
@@ -86,7 +87,7 @@
 	        				<div class="form-group col-sm-4">		  
 		        				<label class="col-sm-2 control-label">Sexo</label>
 		        				<div class="col-sm-10">
-			     					<select class="form-control" id="sexo">
+			     					<select class="form-control" id="sexo" required="required">
 			     						<option selected disabled="disabled" id="sexo" name="sexo">SEXO</option>
 			   							<option value="feminino">Feminino</option>
 			   							<option value="masculino">Masculino</option>
@@ -101,10 +102,8 @@
 									<input class="form-control campoNumero" type="text" name="cpf" id="cpf">
 								</div>
 								<div class="row">
-        							<div class="col-sm-12">
-        								<div class="right">
-        									<label id="lblCpf" class=""></label>
-        								</div>
+        							<div class="col-sm-12 text-right">
+        								<label id="lblCpf"></label>
         							</div>
 								</div>
 							</div>
@@ -119,7 +118,7 @@
 	        				<div class="form-group col-sm-6">
 	    						<label class="control-label col-sm-4" for="numero">Numero</label>  				
 	    						<div class="col-sm-8">
-	    							<input class="form-control" type="text" name="numero" id="numero">
+	    							<input class="form-control campoNumero" type="text" name="numero" id="numero">
 	    						</div>
 	        				</div>
 	        			</div>
@@ -147,6 +146,9 @@
 	        					<div class="col-sm-10">
 	        						<input class="form-control" type="email" name="email" id="email">
 	        					</div>
+	        					<div class="col-sm-12">
+	        						<label id="lblEmail"></label>
+	        					</div>
 	        				</div>
 	        				<div class="form-group col-sm-6">
 	        					<label class="col-sm-2 control-label" for="cadjus">Registro</label>
@@ -156,7 +158,7 @@
 	        					<div class="row">
 	    							<div class="col-sm-12">
 	    								<div class="right">
-	    									<label id="lblRegistro" class=""></label>
+	    									<label id="lblRegistro"></label>
 	    								</div>
 	    							</div>
 								</div>
@@ -176,11 +178,9 @@
 	        						<input class="form-control" type="password" name="confirmaSenha" id="confirmaSenha">
 	        					</div>
 	        					<div class="row">
-	    							<div class="col-sm-12">
-	    								<div class="right">
-	    									<label id="lblSenha" class=""></label>
-	    								</div>
-	    							</div>
+	    							<div class="col-sm-12 text-center">  								
+	   									<label id="lblSenha" style="color:red"></label>
+	       							</div>
 								</div>
 	        				</div>
         				</div>	
@@ -204,5 +204,21 @@
     			</div>
         	</div>    
 	   </div>
+
+	 	<footer class="footer navbar-fixed-bottom">
+	        <div class="container">
+
+	            <div class="row">	     
+	                <div class="col-sm-6">	
+	                	<br>    
+	                    <p class="text-center"> Desenvolvido por Paulo Sérgio do Nascimento </p> 
+	                </div>
+	                <div class="col-sm-6 info text-center">
+	             		<br>
+	                	<a id="git" href="https://github.com/paulobazooka/projeto-dwei5-2018-ifsp" target="blank" class="disabled"><i class="fa fa-github" style="font-size:24px"></i> Código Fonte</a>
+	                </div>
+	            </div>
+	        </div>
+    	</footer>
 	</body>
 </html>
