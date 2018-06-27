@@ -26,33 +26,36 @@ function clicou(id){
              
         // laço para incrementar
         for(var i=0; i < obj.length; i++){              
-            if(obj[i].idcandidato == id){
+          if(obj[i].idcandidato == id){
             	
- 				$('#idcandidato').val(obj[i].idcandidato); 
- 				$('#idcandidato').attr('disabled', 'disabled');
- 				$('#nomeCandidato').val(obj[i].nome);
- 				$('#dtNascimento').val(obj[i].datanasc); 
+     				$('#idcandidato').val(obj[i].idcandidato); 
+     				$('#idcandidato').attr('disabled', 'disabled');
+     				$('#nomeCandidato').val(obj[i].nome);
+     				$('#dtNascimento').val(obj[i].datanasc); 
 
- 				if(obj[i].sexo.indexOf("asc") != -1){
- 				   $('#sexoCandidato option:contains("Masculino")').attr('selected', true);
- 				}else {
- 					if(obj[i].sexo.indexOf("em") != -1){
- 						 $('#sexoCandidato option:contains("Feminino")').attr('selected', true);
- 					}else {
- 						 $('#sexoCandidato option:contains("Não Declarar")').attr('selected', true);
- 					}
- 				}
- 						
- 				$('#cpfCandidato').val(obj[i].cpf);
- 				$('#ruaCandidato').val(obj[i].rua);
- 				$('#numeroCandidato').val(obj[i].numero);
- 				$('#estado').val(obj[i].estado);
- 				$('#cidade').val(obj[i].cidade);
- 				$('#email').val(obj[i].email);
- 				$('#cadjus').val(obj[i].cadjus);
- 				$('#senha').val(obj[i].senha);	           
-            }
+     				if(obj[i].sexo.indexOf("asc") != -1){
+     				   $('#sexoCandidato option:contains("Masculino")').attr('selected', true);
+     				}else {
+     					if(obj[i].sexo.indexOf("em") != -1){
+     						 $('#sexoCandidato option:contains("Feminino")').attr('selected', true);
+     					}else {
+     						 $('#sexoCandidato option:contains("Não Declarar")').attr('selected', true);
+     					}
+     				}
+     						
+     				$('#cpfCandidato').val(obj[i].cpf);
+     				$('#ruaCandidato').val(obj[i].rua);
+     				$('#numeroCandidato').val(obj[i].numero);
+     				$('#estado').val(obj[i].estado);
+     				$('#cidade').val(obj[i].cidade);
+     				$('#email').val(obj[i].email);
+     				$('#cadjus').val(obj[i].cadjus);
+     				$('#senha').val(obj[i].senha);	
+            console.log(obj[i].bairro);           
+          }
         }
+
+
  });       
 
 	$('#modal').modal('show');	

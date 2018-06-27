@@ -31,8 +31,8 @@
 			    <ul class="nav navbar-nav">
 			      <li><a href="index.html">Home</a></li>
 			      <li><a href="buscar.html">Buscar</a></li>
-			      <li><a href="#">Legislativo</a></li>
-			      <li><a href="#">IFSP</a></li>
+			      <li><a href="https://www.al.sp.gov.br/" target="blank">Legislativo</a></li>
+			      <li><a href="https://www.cmp.ifsp.edu.br/" target="blank">IFSP</a></li>
 			    </ul>
 			  </div>
 			</nav>
@@ -50,16 +50,6 @@
     			<div class="panel-body">
       	  			<form class="form-horizontal">
   	  					
-  	  					<div class="row">
-	  	  					<div class="col-sm-4">
-		  	  					<div class="form-group">
-		  	  						<label class="control-label col-sm-3" for="id">Código</label>
-		  	  						<div class="col-sm-3">
-		  	  							<input type="text" name="id" id="id" class="form-control">
-		  	  						</div>
-		  	  					</div>
-	  	  					</div>	
-						</div>
         				<div class="form-group">
     						<label class="control-label col-sm-1" for="nome">Nome</label>
     						<div class="col-sm-11">
@@ -71,7 +61,7 @@
     							</div>
     						</div>	
         				</div>
-        				<div class="row">
+        				
 	        				<div class="form-group col-sm-4">
 	        					<label class="col-sm-6 control-label" for="dtNasc">Data de Nascimento</label>
 	        					<div class="col-sm-6">
@@ -99,7 +89,7 @@
 							<div class="form-group col-sm-4">
 								<label class="col-sm-2 control-label" for="cpf">CPF</label>
 								<div class="col-sm-10">
-									<input class="form-control campoNumero" type="text" name="cpf" id="cpf">
+								  <input class="form-control campoNumero" type="text" name="cpf" id="cpf">
 								</div>
 								<div class="row">
         							<div class="col-sm-12 text-right">
@@ -107,21 +97,27 @@
         							</div>
 								</div>
 							</div>
-						</div>
+						
 						<div class="row">
-	        				<div class="form-group col-sm-6">
-	    						<label class="control-label col-sm-2" for="rua">Rua</label>     				
+	        				<div class="form-group col-sm-12 col-lg-6">
+	    						<label class="control-label col-sm-2" for="rua">Rua</label>     		 		
 	    						<div class="col-sm-10">
 	    							<input class="form-control" type="text" name="rua" id="rua">
 	    						</div>
 	        				</div>
-	        				<div class="form-group col-sm-6">
+	        				<div class="form-group col-sm-12 col-lg-6">
 	    						<label class="control-label col-sm-4" for="numero">Numero</label>  				
 	    						<div class="col-sm-8">
 	    							<input class="form-control campoNumero" type="text" name="numero" id="numero">
 	    						</div>
 	        				</div>
 	        			</div>
+	        			<div class="form-group">
+    						<label class="control-label col-sm-1" for="bairro">Bairro</label>
+    						<div class="col-sm-11">
+    							<input class="form-control" type="text" name="bairro" id="bairro">
+    						</div>
+        				</div>
         				<div class="row">
         					<div class="form-group col-sm-6">
         						<label class="control-label col-sm-2" for="estados">Estado</label>
@@ -185,16 +181,16 @@
 	        				</div>
         				</div>	
         				<hr>
-        				<div class="row">
+        				<div>
         					<div class="container-fluid">
         						<div class="text-center">
-		        					<div class="col-sm-6">
-		        						<button type="reset" class="btn-lg btn-warning">LIMPAR</button>
+		        					<div class="col-sm-12 col-lg-6">
+		        						<button type="reset" class="btn-lg btn-warning btn-tamanho">LIMPAR</button>
 		        					</div>
 	        					</div>
 	        					<div class="text-center">
-		        					<div class="col-sm-6">
-		        						<button id="btnCadastrar" type="button" class="btn-lg btn-success">CADASTRAR</button>
+		        					<div class="col-sm-12 col-lg-6">
+		        						<button id="btnCadastrar" type="button" class="btn-lg btn-success btn-tamanho">CADASTRAR</button>
 		        					</div>
 	        					</div>
 	        				</div>

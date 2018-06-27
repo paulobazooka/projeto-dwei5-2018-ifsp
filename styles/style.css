@@ -33,3 +33,7 @@ table{
     height: 400px;
     overflow: scroll;
 }
+
+.btn-tamanho{
+	width: 30%;
+}

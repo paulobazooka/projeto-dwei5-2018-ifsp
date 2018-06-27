@@ -193,6 +193,7 @@ function cadastrarCandidato(){
     var _cpf = $('#cpf').val();
     var _rua = $('#rua').val();
     var _numero = $('#numero').val();
+    var _bairro = $('#bairro').val();
     var _cidade = $('#cidades option:selected').val();
     var _estado = $('#estados option:selected').val();
     var _email = $('#email').val();
@@ -210,6 +211,7 @@ function cadastrarCandidato(){
             cadjus : _registro,
             rua    : _rua,
             numero : _numero,
+            bairro : _bairro,
             cidade : _cidade,
             estado : _estado,
             cpf    : _cpf,
